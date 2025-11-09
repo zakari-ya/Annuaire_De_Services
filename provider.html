@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du prestataire - Services de Proximité</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="provider.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="font-serif"
+                style="font-size:1.5rem; font-weight:700; color:#1F2937; text-decoration:none;">Services de
+                Proximité</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-container">
+
+            <a href="index.html#providers" class="back-btn">
+                <svg width="20" height="20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Retour aux prestataires
+            </a>
+
+            <div id="providerDetails" class="provider-card"></div>
+
+            <section class="similar-section">
+                <h3 class="similar-title">Autres prestataires dans le même quartier</h3>
+                <div id="similarProviders" class="similar-grid"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-title">Services de Proximité</p>
+        <p class="footer-text">© 2025 - Tous droits réservés</p>
+    </footer>
+
+    <script src="provider.js"></script>
+</body>
+
+</html>

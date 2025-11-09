@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration - Services de Proximité</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="admin.css" rel="stylesheet" />
+
+</head>
+
+<body class="gradient-bg min-h-screen font-sans">
+
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <div class="nav-inner">
+      <div class="nav-flex">
+        <div class="nav-items">
+          <a href="index.html" class="font-serif text-2xl font-bold text-gray-800">Services de Proximité</a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="index.html#providers" class="nav-link">Prestataires</a>
+          <a href="ajouter.html" class="nav-link">Ajouter</a>
+          <a href="admin.html" class="nav-link-active">Admin</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+          <a href="index.html" class="mobile-menu-link">Accueil</a>
+          <a href="index.html#providers" class="mobile-menu-link">Prestataires</a>
+          <a href="ajouter.html" class="mobile-menu-link">Ajouter</a>
+          <a href="admin.html" class="mobile-menu-link">Admin</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu principal -->
+  <main class="main-container">
+    <div class="main-inner">
+      <div class="text-center">
+        <h1 class="heading-primary">
+          Administration
+        </h1>
+        <p class="text-xl">
+          Modérez les prestataires en attente de validation
+        </p>
+      </div>
+
+      <!-- Statistiques -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number text-blue-600" id="totalProviders">
+            0
+          </div>
+          <div class="stat-text">Total prestataires</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-emerald-600" id="validatedProviders">
+            0
+          </div>
+          <div class="stat-text">Validés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-orange-600" id="pendingProviders">
+            0
+          </div>
+          <div class="stat-text">En attente</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-purple-600" id="jsonProviders">
+            0
+          </div>
+          <div class="stat-text">Données référence</div>
+        </div>
+      </div>
+
+      <!-- Section des prestataires en attente -->
+      <section class="mb-12">
+        <h2 class="section-heading">
+          Prestataires en attente de validation
+        </h2>
+        <div id="pendingList" class="space-y-6">
+          <!-- Les prestataires en attente seront injectés ici -->
+        </div>
+        <div id="noPending" class="hidden text-center py-12">
+          <div class="text-gray-400 mb-4">
+            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-500 text-lg">
+            Aucun prestataire en attente de validation
+          </p>
+        </div>
+      </section>
+
+      <!-- Section des prestataires validés -->
+      <section>
+        <h2 class="section-heading">
+          Prestataires validés
+        </h2>
+        <div class="validated-grid" id="validatedList">
+          <!-- Les prestataires validés seront injectés ici -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-container">
+    <div class="footer-inner">
+      <p class="footer-title">Services de Proximité</p>
+      <p class="footer-text">© 2025 - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- Modal de confirmation -->
+  <div id="confirmModal" class="modal-overlay hidden">
+    <div class="modal-container">
+      <div class="modal-icon">
+        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h3 class="modal-title">
+        Modifications enregistrées
+      </h3>
+      <p class="modal-text">
+        Les informations du prestataire ont été mises à jour avec succès.
+      </p>
+      <button onclick="closeConfirmModal()" class="modal-btn">
+        Compris
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal d'édition simplifié -->
+  <div id="editModal" class="modal-overlay hidden">
+    <div class="edit-modal-container">
+      <div class="edit-modal-header">
+        <h3 class="edit-modal-title">
+          Modifier le prestataire
+        </h3>
+        <button onclick="closeEditModal()" class="edit-modal-close">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form id="editForm" class="edit-form">
+        <input type="hidden" id="editId" />
+        <input type="hidden" id="editSource" />
+
+        <div class="form-group">
+          <label for="editName" class="form-label">
+            Nom du prestataire
+          </label>
+          <input type="text" id="editName" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="editJob" class="form-label">
+            Métier
+          </label>
+          <input type="text" id="editJob" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="editZone" class="form-label">
+            Zone d'intervention
+          </label>
+          <input type="text" id="editZone" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="editPhone" class="form-label">
+            Téléphone
+          </label>
+          <input type="tel" id="editPhone" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="editDescription" class="form-label">
+            Description
+          </label>
+          <textarea id="editDescription" rows="4" class="form-textarea" required></textarea>
+        </div>
+
+        <div id="jsonWarning" class="warning-box">
+          <div class="warning-content">
+            <svg class="warning-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p class="warning-text">
+              Ce prestataire provient des données de référence. Les
+              modifications créeront une copie locale.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" onclick="closeEditModal()" class="btn-cancel">
+            Annuler
+          </button>
+          <button type="submit" class="btn-save">
+            Enregistrer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="admin.js"></script>
+</body>
+
+</html>

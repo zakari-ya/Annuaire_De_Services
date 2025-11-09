@@ -1,0 +1,110 @@
+[
+  {
+    "name": "SERVICE DE PERSONAL SHOPPER",
+    "location": "Marrakech",
+    "service_type": "Services à la personne",
+    "phone": "+212 6 61 47 72 28",
+    "phone_raw": "+212 6 61 47 72 28",
+    "id": "362983"
+  },
+  {
+    "name": "SUPERMARCHÉ MARRAKECH",
+    "location": "guéliz, Marrakech",
+    "service_type": "Services à la personne",
+    "phone": "2126601919342",
+    "phone_raw": "2126601919342",
+    "id": "1533336"
+  },
+  {
+    "name": "LA CONCIERGERIE MODERNE",
+    "location": "Tanger",
+    "service_type": "Services aux entreprises",
+    "phone": "+212 6 18 58 20 51",
+    "phone_raw": "+212 6 18 58 20 51",
+    "description": "Si vous désirez organiser vos vacances et que vous manquez de temps, vous ...",
+    "id": "1601014"
+  },
+  {
+    "name": "PLANÈTE DES ÉPICES",
+    "location": "5, Trik Dar al-Bacha, Marrakech",
+    "service_type": "Herboristerie",
+    "phone": "+212 5 24 38 24 48",
+    "phone_raw": "+212 5 24 38 24 48",
+    "description": "Dans cette pharmacie berbère, Abdou, diplômé en herboristerie, propose ...",
+    "rating": "5/5",
+    "reviews_count": "(1 avis )",
+    "id": "357037"
+  },
+  {
+    "name": "MADE IN MARRAKECH",
+    "location": "Marrakech",
+    "service_type": "Site d'information",
+    "description": "Un site branché au design agréable répertoriant une foule d'infos utiles ...",
+    "rating": "4/5",
+    "reviews_count": "(1 avis )",
+    "id": "358014"
+  },
+  {
+    "name": "POLICE TOURISTIQUE",
+    "location": "Place Jemaâ el-Fna, Marrakech",
+    "service_type": "Police - Justice",
+    "phone": "+212 5 24 38 46 01",
+    "phone_raw": "+212 5 24 38 46 01",
+    "description": "La ville ayant décidé de tout mettre en œuvre pour développer son image ...",
+    "rating": "4/5",
+    "reviews_count": "(1 avis )",
+    "id": "185992"
+  },
+  {
+    "name": "HENNA CAFE MARRAKECH",
+    "location": "93, arset Aouzal Souikat, Marrakech",
+    "service_type": "Cours de langues",
+    "phone": "+212 5 24 38 14 10",
+    "phone_raw": "+212 5 24 38 14 10",
+    "description": "Ce café associatif de Bab Doukkala accueille les étrangers qui souhaitent ...",
+    "id": "1698916"
+  },
+  {
+    "name": "IDEALOG",
+    "location": "Guéliz, Marrakech",
+    "service_type": "Cours de langues",
+    "phone": "+212 5 24 45 79 57",
+    "phone_raw": "+212 5 24 45 79 57",
+    "description": "Ce centre de langues, dont le siège est à Barcelone, revendique 20 ans ...",
+    "id": "1698915"
+  },
+  {
+    "name": "CENTRE LESSANE ARABI",
+    "location": "Guéliz, Marrakech",
+    "service_type": "Cours de langues",
+    "phone": "+212 5 24 43 82 64",
+    "phone_raw": "+212 5 24 43 82 64",
+    "description": "Le centre d'apprentissage linguistique Lessane Arabi permet de se former à ...",
+    "id": "1698914"
+  },
+  {
+    "name": "SERVICE DES DOUANES MAROCAINES",
+    "location": "Marrakech",
+    "service_type": "Administration - Service public",
+    "description": "Utile si vous souhaitez faire dédouaner votre véhicule, apporter des ...",
+    "id": "1698224"
+  },
+  {
+    "name": "CHAMBRE FRANÇAISE DE COMMERCE ET D'INDUSTRIE DU MAROC",
+    "location": "Avenue Yaâkoub El Mansour, Marrakech",
+    "service_type": "Création d'entreprise",
+    "phone": "+212 5 24 44 94 91",
+    "phone_raw": "+212 5 24 44 94 91",
+    "description": "La CFCIM est l'antenne marocaine de la Chambre de commerce et d'industrie ...",
+    "id": "1698094"
+  },
+  {
+    "name": "DR ABDELGHANI LAALOU",
+    "location": "Guéliz, Marrakech",
+    "service_type": "Médecins",
+    "phone": "+212 5 24 43 35 08",
+    "phone_raw": "+212 5 24 43 35 08",
+    "description": "Médecine générale. Le Dr Laalou est joignable au cabinet ou sur son ...",
+    "id": "1695702"
+  }
+]
